@@ -48,7 +48,7 @@ class App extends Component {
             <Route exact path="/500" name="Page 500" render={(props) => <Page500 {...props} />} />
             {/* <Route path="/dashboard" name="Home" render={(props) => <DefaultLayout {...props} />} /> */}
             <Route
-              path="/dashboard"
+              path="/"
               name="Home"
               render={() => {
                 return localStorage.getItem('accessToken') ? <DefaultLayout /> : <Redirect to="/" />
