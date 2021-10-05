@@ -1,7 +1,11 @@
 import React from 'react'
 import { AppContent, AppSidebar, AppHeader } from '../components/index'
+import { Redirect } from 'react-router-dom'
 
-const DefaultLayout = () => {
+const DefaultLayout = (authorized) => {
+  if (!authorized) {
+    return <Redirect to="/login" />
+  }
   return (
     <div>
       <AppSidebar />

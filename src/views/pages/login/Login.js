@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import {
   CButton,
   CCard,
@@ -15,8 +16,21 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
+import { render } from 'enzyme'
 
 const Login = () => {
+  let history = useHistory()
+
+  let login = () => {
+    localStorage.setItem('accessToken', true)
+    history.replace('/dashboard')
+  }
+
+  const state = {
+    username: '',
+    password: '',
+  }
+
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
@@ -32,7 +46,17 @@ const Login = () => {
                       <CInputGroupText>
                         <CIcon icon={cilUser} />
                       </CInputGroupText>
-                      <CFormInput placeholder="Username" autoComplete="username" />
+                      <CFormInput
+                        type="text"
+                        placeholder="Username"
+                        autoComplete="username"
+                        value={state.username}
+                        onChange={(event) =>
+                          state.setState({
+                            username: event,
+                          })
+                        }
+                      />
                     </CInputGroup>
                     <CInputGroup className="mb-4">
                       <CInputGroupText>
@@ -42,11 +66,17 @@ const Login = () => {
                         type="password"
                         placeholder="Password"
                         autoComplete="current-password"
+                        value={state.password}
+                        onChange={(event) =>
+                          this.setState({
+                            password: event,
+                          })
+                        }
                       />
                     </CInputGroup>
                     <CRow>
                       <CCol xs={6}>
-                        <CButton color="primary" className="px-4">
+                        <CButton color="primary" className="px-4" onClick={login}>
                           Login
                         </CButton>
                       </CCol>
