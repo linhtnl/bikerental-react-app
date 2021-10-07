@@ -1,7 +1,19 @@
 import axiosClient from './axiosClient'
 const getUserAPI = {
-  getAll: () => {
-    const url = '/customers'
+  getAllCustomer: () => {
+    const url = '/admins/customers'
+    return axiosClient.get(url)
+  },
+  getAllOwner: () => {
+    const url = '/owners'
+    return axiosClient.get(url)
+  },
+  getOwnerById: (id) => {
+    const url = `/owners/${id}`
+    return axiosClient.get(url)
+  },
+  getVoucher: () => {
+    const url = '/vouchers'
     return axiosClient.get(url)
   },
 }

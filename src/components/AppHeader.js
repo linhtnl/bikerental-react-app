@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   CContainer,
@@ -31,6 +31,11 @@ const AppHeader = () => {
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
+        <CHeaderNav className="d-none d-md-flex me-auto">
+          <CNavItem>
+            <CNavLink href="/createVoucher">Create Voucher</CNavLink>
+          </CNavItem>
+        </CHeaderNav>
         <CHeaderNav className="ms-3">
           <AppHeaderDropdown />
         </CHeaderNav>

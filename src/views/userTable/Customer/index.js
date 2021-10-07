@@ -23,7 +23,7 @@ function CustomerTable() {
     console.log('LIstttt:')
     const fetchCustomerList = async () => {
       try {
-        const response = await getUserAPI.getAll()
+        const response = await getUserAPI.getAllCustomer()
         setCustomerList(response)
 
         customerList.map((customer) => console.log(customer.id))

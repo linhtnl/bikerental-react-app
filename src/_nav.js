@@ -12,12 +12,12 @@ const _nav = [
   },
   {
     component: CNavTitle,
-    name: 'Event',
+    name: 'Booking',
   },
   {
     component: CNavItem,
-    name: 'Event',
-    to: '/eventTable',
+    name: 'Booking',
+    to: '/bookingTable',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
   {
@@ -41,6 +41,16 @@ const _nav = [
         to: '/userTable/Owner',
       },
     ],
+  },
+  {
+    component: CNavTitle,
+    name: 'Campaign and Voucher',
+  },
+  {
+    component: CNavItem,
+    name: 'Voucher',
+    to: '/voucherTable',
+    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
 ]
 

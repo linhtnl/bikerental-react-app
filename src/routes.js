@@ -3,9 +3,12 @@ import React from 'react'
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
-const EventTable = React.lazy(() => import('./views/eventTable'))
+const BookingTable = React.lazy(() => import('./views/bookingTable'))
 const CustomerTable = React.lazy(() => import('./views/userTable/Customer'))
 const OwnerTable = React.lazy(() => import('./views/userTable/Owner'))
+const OwnerDetail = React.lazy(() => import('./views/OwnerDetail'))
+const VoucherTable = React.lazy(() => import('./views/voucherTable'))
+const CreateVoucher = React.lazy(() => import('./views/createVoucher'))
 
 // Base
 const Accordion = React.lazy(() => import('./views/components/base/accordion/Accordion'))
@@ -101,10 +104,13 @@ const routes = [
   { path: '/notifications/toasts', name: 'Toasts', component: Toasts },
   { path: '/widgets', name: 'Widgets', component: Widgets },
 
-  { path: '/eventTable', name: 'Event', component: EventTable },
+  { path: '/bookingTable', name: 'Booking', component: BookingTable },
   { path: '/userTable', name: 'User', component: CustomerTable, exact: true },
   { path: '/userTable/Customer', name: 'Customer', component: CustomerTable },
   { path: '/userTable/Owner', name: 'Owner', component: OwnerTable },
+  { path: '/OwnerDetail', name: 'OwnerDetail', component: OwnerDetail },
+  { path: '/voucherTable', name: 'Voucher', component: VoucherTable },
+  { path: '/createVoucher', name: 'createVoucher', component: CreateVoucher },
 ]
 
 export default routes
