@@ -9,6 +9,7 @@ const OwnerTable = React.lazy(() => import('./views/userTable/Owner'))
 const OwnerDetail = React.lazy(() => import('./views/OwnerDetail'))
 const VoucherTable = React.lazy(() => import('./views/voucherTable'))
 const CreateVoucher = React.lazy(() => import('./views/createVoucher'))
+const AreaTable = React.lazy(() => import('./views/areaTable'))
 
 // Base
 const Accordion = React.lazy(() => import('./views/components/base/accordion/Accordion'))
@@ -111,6 +112,7 @@ const routes = [
   { path: '/OwnerDetail', name: 'OwnerDetail', component: OwnerDetail },
   { path: '/voucherTable', name: 'Voucher', component: VoucherTable },
   { path: '/createVoucher', name: 'createVoucher', component: CreateVoucher },
+  { path: '/areaTable', name: 'Area', component: AreaTable },
 ]
 
 export default routes

@@ -16,5 +16,9 @@ const getUserAPI = {
     const url = '/vouchers'
     return axiosClient.get(url)
   },
+  getAllArea: () => {
+    const url = '/areas'
+    return axiosClient.get(url)
+  },
 }
 export default getUserAPI
